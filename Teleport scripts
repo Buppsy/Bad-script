@@ -1,0 +1,34 @@
+local Players = game:GetService("Players")
+
+local function findRandomEnemyPlayer()
+	-- Get a list of all players in the game
+	local allPlayers = Players:GetPlayers()
+	
+	-- Filter the list to include only players who are not on the same team as the player
+	local enemyPlayers = {}
+	for _, player in pairs(allPlayers) do
+		if player.Team ~= Players.LocalPlayer.Team then
+			table.insert(enemyPlayers, player)
+		end
+	end
+	
+	-- Choose a random player from the list of enemy players
+	local enemyPlayer = enemyPlayers[math.random(#enemyPlayers)]
+	
+	return enemyPlayer
+end
+
+local function teleportToEnemy()
+	-- Find a random enemy player
+	local enemy = findRandomEnemyPlayer()
+	
+	if enemy then
+		-- Teleport to the enemy player's character
+		Players.LocalPlayer.Character:MoveTo(enemy.Character.HumanoidRootPart.Position)
+	end
+end
+
+for i = 1,360 do
+	teleportToEnemy()
+	wait(1)
+end
