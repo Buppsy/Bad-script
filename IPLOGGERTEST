@@ -1,0 +1,75 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Welcome to Buppsyware!", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Main"
+})
+Tab:AddButton({
+	Name = "Load silent aim!",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Averiias/Universal-SilentAim/main/main.lua"))()
+  	end    
+})
+
+Tab:AddButton({
+    Name = "Load Trashjpg!",
+    Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Trashjpg/Rage/main/TC2.lua"))()
+    end
+})
+
+Tab:AddButton({
+    Name = "Load IY!",
+    Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to enemies",
+    Callback = function()
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/Buppsy/Bad-script/main/Teleport"))() 
+    end
+})
+
+Tab:AddButton({
+    Name = "T for Teleport!",
+    Callback = function()
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/Buppsy/Bad-script/main/TforT"))()
+    end
+})
+
+Tab:AddButton({ 
+    Name = "Golden Pan",
+    Callback = function()
+        while true do
+        local Players = game:GetService("Players")
+        local LocalPlayer = Players.LocalPlayer
+
+        LocalPlayer.PlayerGui.GUI.Client.Variables.primary.Value = "Golden Frying Pan" 
+
+        task.wait()
+        end
+    end
+})
+OrionLib:MakeNotification({
+	Name = "Loaded!",
+	Content = "Buppsyware Loaded, Have fun!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+OrionLib:Init()
+
+local NIGGA = 0.5
+
+while true do
+    
+ print("Bibulus > Jayyyyware!") -- It dont exist thou 💀
+
+  wait(NIGGA)
+end
